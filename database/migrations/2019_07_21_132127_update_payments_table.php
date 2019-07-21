@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Payment extends Migration
+class UpdatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class Payment extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->integer('price');
-            $table->bigInteger('authority');
-            $table->unsignedBigInteger('order_id');
-            $table->timestamps();
+        Schema::table("payments",function (Blueprint $table){
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
