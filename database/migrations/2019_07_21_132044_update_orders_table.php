@@ -14,7 +14,6 @@ class UpdateOrdersTable extends Migration
     public function up()
     {
         Schema::table("orders",function (Blueprint $table){
-
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('pro_id')->references('id')->on('products')

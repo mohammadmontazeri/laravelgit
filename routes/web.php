@@ -15,7 +15,17 @@ Route::get('/edituser', function () {
     return view('user.edit');
 })->name('edit');
 
+
+
+
+
 Auth::routes();
 Route::post('/updateuser', 'UserController@update')->name('updateuser');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth:web'])->group(function () {
+    Route::get('/testpanel', function () {
+        return view('user.test');
+    });
+});
