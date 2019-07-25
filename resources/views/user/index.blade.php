@@ -2,5 +2,8 @@
 
 
 @section('content')
-    Test Content
+<a href="{{route('logout')}}">
+    LogOut
+</a>
+
 @endsection

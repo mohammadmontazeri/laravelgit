@@ -15,17 +15,15 @@ Route::get('/edituser', function () {
     return view('user.edit');
 })->name('edit');
 
-
-
-
-
 Auth::routes();
 Route::post('/updateuser', 'UserController@update')->name('updateuser');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth:web'])->group(function () {
-    Route::get('/testpanel', function () {
-        return view('user.test');
+    Route::get('/index', function () {
+        return view('user.index');
     });
+
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
 });
