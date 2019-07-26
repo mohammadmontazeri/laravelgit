@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,19 +12,22 @@
 |
 */
 
-Route::get('/edituser', function () {
+/*Route::get('/edituser', function () {
     return view('user.edit');
-})->name('edit');
+})->name('edit');*/
 
 Auth::routes();
-Route::post('/updateuser', 'UserController@update')->name('updateuser');
-
+/*Route::post('/updateuser', 'Admin\UserController@update')->name('updateuser');*/
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/index', function () {
-        return view('user.index');
+        return view('index');
     });
 
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
+//Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 });
+
+Route::namespace('Admin')->group(function (){
+    Route::resource('/user','UserController');
+});
+
