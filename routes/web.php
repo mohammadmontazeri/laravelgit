@@ -12,22 +12,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/edituser', function () {
-    return view('user.edit');
-})->name('edit');*/
-
+Route::get('/panel_logout',function (){
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect('/index');
+});
 Auth::routes();
-/*Route::post('/updateuser', 'Admin\UserController@update')->name('updateuser');*/
 
 Route::middleware(['auth:web'])->group(function () {
     Route::get('/index', function () {
         return view('index');
     });
-
 //Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 });
-
-Route::namespace('Admin')->group(function (){
-    Route::resource('/user','UserController');
-});
-
+Route::resource('/admin_panel/user','Admin\UserController');
+Route::get('/all_admin',function (){
+    return view('admin.user.all_admin');
+})->name('all_admin');

@@ -175,7 +175,8 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     protected function failedAuthorization()
     {
-        throw new AuthorizationException('This action is unauthorized.');
+        return response(view('errors.403'), 403);
+       /* throw new AuthorizationException('This action is unauthorized.');*/
     }
 
     /**

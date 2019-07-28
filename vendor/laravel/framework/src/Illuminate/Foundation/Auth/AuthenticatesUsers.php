@@ -30,6 +30,7 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
+       // $this->authorize('login_panel');
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle

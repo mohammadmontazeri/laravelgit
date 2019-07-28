@@ -1,21 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Hekmatinasser\Verta\Verta;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-class UserController extends Controller
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+class UserController extends AdminController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        if (Auth::user()->super_admin == 0){
+            $users = User::where('super_admin','=',0)->get();
+        }else{
+            $users=User::get();
+        }
+        return view('admin.user.index',compact('users'));
     }
 
     /**
@@ -58,7 +59,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.user.edit',compact('user'));
     }
 
     /**
@@ -68,9 +69,23 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+       //$this->authorize('update',Auth::user()->id)*/
+        $data=$request->all();
+
+        if (!isset($data['img'])){
+            $pic = Auth::user()->img;
+        }else{
+            $pic = $this->imageuploader($data['img']);
+        }
+        Auth()->user()->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'img' =>$pic,
+        ]);
+        return redirect(route(''));
     }
 
     /**
@@ -81,6 +96,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect(route('user.index'));
     }
 }

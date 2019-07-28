@@ -61,12 +61,24 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function imageuploader($file){
+        $filename=time()."_".$file->getClientOriginalName();
+        $path=public_path('/uploads/');
+        $file->move($path,$filename);
+        return "/uploads/".$filename;
+    }
+
+    public function create(array $data)
     {
-        return User::create([
+        $file = $data['img'];
+        $pic = $this->imageuploader($file);
+        $user = new User([
             'name' => $data['name'],
             'email' => $data['email'],
+            'img' => $pic,
             'password' => Hash::make($data['password']),
         ]);
+        $user->save();
+        return $user;
     }
 }

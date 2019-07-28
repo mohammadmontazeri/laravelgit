@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-right image">
-                <img src="../admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{asset(\Illuminate\Support\Facades\Auth::user()->img)}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
@@ -28,8 +28,10 @@
                     <i class="fa fa-dashboard"></i> <span>کاربران</span> <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>ادمین ها </a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i>اعضا </a></li>
+                    <li class="active"><a href="{{url(route('user.index'))}}"><i class="fa fa-circle-o"></i>کلیه کاربران </a></li>
+                    @can('update',\Illuminate\Support\Facades\Auth::user())
+                        <li><a href="{{url("all_admin")}}"><i class="fa fa-circle-o"></i>ادمین ها </a></li>
+                    @endcan
                 </ul>
             </li>
             <li>
@@ -83,7 +85,7 @@
             </li>
             <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>ارتباط با ما</span></a></li>
            {{-- <li class="header">LABELS</li>--}}
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>خروج</span></a></li>
+            <li><a href="{{url("panel_logout")}}"><i class="fa fa-circle-o text-red"></i> <span>خروج</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

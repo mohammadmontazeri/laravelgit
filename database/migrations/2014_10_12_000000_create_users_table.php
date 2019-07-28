@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->boolean('status')->default('0');
-            $table->string('role')->default('admin');
+            $table->string('role')->default('user');
             $table->boolean('super_admin')->default('0');
             $table->string('email')->unique();
             $table->string('img');

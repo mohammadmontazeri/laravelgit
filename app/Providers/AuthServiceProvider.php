@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('login_panel',function ($user){
+            return $user->status == "1";
+        });
     }
 }
