@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -73,11 +73,11 @@ class RegisterController extends Controller
         $file = $data['img'];
         $pic = $this->imageuploader($file);
         $user = new User([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'img' => $pic,
-            'password' => Hash::make($data['password']),
-        ]);
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'img' => $pic,
+        'password' => Hash::make($data['password']),
+    ]);
         $user->save();
         return $user;
     }

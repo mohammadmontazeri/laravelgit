@@ -69,31 +69,31 @@ class UserController extends AdminController
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,User $user)
     {
        //$this->authorize('update',Auth::user()->id)*/
         $data=$request->all();
-
         if (!isset($data['img'])){
-            $pic = Auth::user()->img;
+            $pic = $user->img;
         }else{
             $pic = $this->imageuploader($data['img']);
         }
-        Auth()->user()->update([
+        if (isset($data['password'])){
+            $pass = Hash::make($data['password']);
+        }else{
+            $pass = $user->password;
+        }
+       $user->update([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'role' => $data['role'],
+            'status' => $data['status'],
+            'password' => $pass,
             'img' =>$pic,
         ]);
-        return redirect(route(''));
+        return redirect('/admin/user');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(User $user)
     {
         $user->delete();

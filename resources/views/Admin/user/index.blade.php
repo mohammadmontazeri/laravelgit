@@ -37,7 +37,7 @@
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td><img src="{{asset($user->img)}}" style="width: 50px;height: 50px;"></td>
+                            <td><img src="{{asset("public".$user->img)}}" style="width: 50px;height: 50px;"></td>
                             <td><?php
                                     $v = new Verta($user->created_at);
                                     $v = \Hekmatinasser\Verta\Verta::instance($user->created_at);
@@ -54,7 +54,6 @@
                             </span></td>
                             <td><span class="label label-info">{{$user->role}}</span></td>
                             <td>
-
                                 @if($user->id == \Illuminate\Support\Facades\Auth::user()->id)
                                     @if(\Illuminate\Support\Facades\Auth::user()->super_admin == 1)
                                     @else
@@ -62,14 +61,14 @@
                                     @endif
                                 @endif
                                 @can('update',\Illuminate\Support\Facades\Auth::user())
-                                    <a class="label label-primary" href="{{route('user.edit',['user'=>$user])}}" >ویرایش</a>
+                                    <a class="label label-primary" href="{{url(route('user.edit',['user'=>$user]))}}">ویرایش</a>
                                 @endcan
 
                             </td>
                             <td>
-                                <form method="post" action="{{route('user.destroy',['user'=>$user])}}">
-                                    {{csrf_field()}}
-                                    {{method_field('delete')}}
+                               <form method="post" action="{{route('user.destroy',['user'=>$user])}}">
+                                        {{csrf_field()}}
+                                        {{method_field('delete')}}
                                     @can('update',\Illuminate\Support\Facades\Auth::user())
                                         <button class="btn btn-danger">حذف</button>
                                     @endcan

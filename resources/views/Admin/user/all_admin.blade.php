@@ -30,12 +30,12 @@
                             <th>ویرایش</th>
                             <th>حذف</th>
                         </tr>
-                        @foreach($users =App\User::where('super_admin','=',0)->get() as $user)
+                        @foreach($users =App\User::where('role','=','admin')->get() as $user)
                         <tr>
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td><img src="{{asset($user->img)}}" style="width: 50px;height: 50px;"></td>
+                            <td><img src="{{asset("public".$user->img)}}" style="width: 50px;height: 50px;"></td>
                             <td><?php
                                     $v = new Verta($user->created_at);
                                     $v = \Hekmatinasser\Verta\Verta::instance($user->created_at);

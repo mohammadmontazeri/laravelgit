@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -21,16 +22,25 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-         protected $redirectTo = '/index';
 
 
 
-
+         protected function redirectTo (){
+           /* if (Auth::user()->can('loginPanel')){
+                return '/index';
+            }
+            else{
+                Auth::logout();
+            }
+           policy
+           */
+           if (Gate::allows('loginPanel')){
+               return '/index';
+           }
+           else{
+               Auth::logout();
+           }
+         }
 
     public function __construct()
     {

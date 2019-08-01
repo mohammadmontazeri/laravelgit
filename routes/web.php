@@ -14,17 +14,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/panel_logout',function (){
     \Illuminate\Support\Facades\Auth::logout();
-    return redirect('/index');
+    return redirect('/admin/home');
 });
 Auth::routes();
 
-Route::middleware(['auth:web'])->group(function () {
-    Route::get('/index', function () {
+Route::middleware(['auth:web'])->group(function (){
+    Route::get('/admin/home', function () {
         return view('index');
     });
-//Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+    // User Module
+    Route::resource('/admin/user','Admin\UserController');
+    Route::get('/admin/allAdmin',function (){
+        return view('admin.user.all_admin');
+    })->name('all_admin');
+    // Category Module
+    Route::resource('/admin/categories','Admin\CategoryController');
+
+
 });
-Route::resource('/admin_panel/user','Admin\UserController');
-Route::get('/all_admin',function (){
-    return view('admin.user.all_admin');
-})->name('all_admin');

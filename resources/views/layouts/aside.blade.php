@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-right image">
-                <img src="{{asset(\Illuminate\Support\Facades\Auth::user()->img)}}" class="img-circle" alt="User Image">
+                <img src="{{asset("public".\Illuminate\Support\Facades\Auth::user()->img)}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
@@ -30,23 +30,29 @@
                 <ul class="treeview-menu">
                     <li class="active"><a href="{{url(route('user.index'))}}"><i class="fa fa-circle-o"></i>کلیه کاربران </a></li>
                     @can('update',\Illuminate\Support\Facades\Auth::user())
-                        <li><a href="{{url("all_admin")}}"><i class="fa fa-circle-o"></i>ادمین ها </a></li>
+                        <li><a href="{{url("admin/allAdmin")}}"><i class="fa fa-circle-o"></i>ادمین ها </a></li>
                     @endcan
                 </ul>
             </li>
             <li>
-                <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>دسته بندی محتوا</span> <small class="label pull-left bg-green">جدید</small>
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>دسته بندی محتوا </span>
+                    <i class="fa fa-angle-left pull-left"></i>
                 </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url(route('categories.index'))}}"><i class="fa fa-circle-o"></i>نمایش دسته بندی ها</a></li>
+                </ul>
             </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-pie-chart"></i>
-                    <span>کلیه محصولات</span>
+                    <span> محصولات</span>
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i>اضافه کردن محصول جدید</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> لیست کلیه محصولات</a></li>
                 </ul>
             </li>
             <li class="treeview">
