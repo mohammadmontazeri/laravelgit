@@ -18,9 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->enum('type',["course","article"]);
             $table->string('image');
+            $table->unsignedBigInteger('cat_id');
             $table->text('detail');
             $table->integer('price');
             $table->string('writer');
+            $table->string('tag');
             $table->integer('episode');
             $table->string('summery','500');
             $table->integer('percentage');

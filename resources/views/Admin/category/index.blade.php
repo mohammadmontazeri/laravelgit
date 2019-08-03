@@ -64,7 +64,7 @@
                                                     <button style='color: red ; background-color: #bbb ;
     outline: none; border-radius: 5px'><i class='fa fa-times'></i></button>
 </form>
-  <a style='color: green' href='#'><i class='fa fa-edit'></i></a></li><a href=".url(route('categories.create',['cat'=>$cat]))."><i class='fa fa-plus-square'></i></a>";                    parent($cat['id']);
+  <a style='color: green' href=".url(route('categories.edit',['cat'=>$cat]))."><i class='fa fa-edit'></i></a></li><a href=".url(route('categories.create',['cat'=>$cat]))."><i class='fa fa-plus-square'></i></a>";                    parent($cat['id']);
                 }
                 if (($cat['parent'] == "")&&($cat['is_parent'] == "0")){
                     echo "<li style='list-style-type: none'> $cat[name]
@@ -73,7 +73,7 @@
                                                     <button style='color: red ; background-color: #bbb ;
     outline: none; border-radius: 5px'><i class='fa fa-times'></i></button>
 </form>
-  <a style='color: green' href='#'><i class='fa fa-edit'></i></a></li><a href=".url(route('categories.create',['cat'=>$cat]))."><i class='fa fa-plus-square'></i></a>";                }
+  <a style='color: green' href=".url(route('categories.edit',['cat'=>$cat]))."><i class='fa fa-edit'></i></a></li><a href=".url(route('categories.create',['cat'=>$cat]))."><i class='fa fa-plus-square'></i></a>";                }
             }
             echo "</ul>";
         }

@@ -18,6 +18,7 @@ class CreateVideosTable extends Migration
             $table->unsignedBigInteger('pro_id');
             $table->string('image');
             $table->string('title');
+            $table->string('detail');
             $table->string('address',300);
             $table->timestamps();
         });

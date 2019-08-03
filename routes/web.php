@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/panel_logout',function (){
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/admin/home');
@@ -20,7 +19,7 @@ Auth::routes();
 
 Route::middleware(['auth:web'])->group(function (){
     Route::get('/admin/home', function () {
-        return view('index');
+        return view('admin.index');
     });
     // User Module
     Route::resource('/admin/user','Admin\UserController');
@@ -29,6 +28,15 @@ Route::middleware(['auth:web'])->group(function (){
     })->name('all_admin');
     // Category Module
     Route::resource('/admin/categories','Admin\CategoryController');
+    // Product Module
+    Route::resource('admin/products','Admin\ProductController');
+    Route::get('admin/product/moreInfo/{id}','Admin\ProductController@moreInfo');
 
+});
+Route::post('ckeditor/image_upload', 'Admin\ProductController@upload')->name('upload');
 
+/// User Panel Routes
+
+Route::get('/testcore',function (){
+   return view('index');
 });

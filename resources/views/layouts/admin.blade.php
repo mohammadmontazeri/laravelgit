@@ -30,6 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <script src="https://kit.fontawesome.com/7c09eb4ded.js"></script>
 
+
     <![endif]-->
 
 </head>
@@ -342,10 +343,13 @@ desired effect
 <script src="{{asset("public/admin/bootstrap/js/bootstrap.min.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset("public/admin/dist/js/app.min.js")}}"></script>
+<script src="{{ asset("vendor/unisharp/laravel-ckeditor/ckeditor.js") }}"></script>
+<script>
+    CKEDITOR.replace( 'summary-ckeditor', {
+        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form'
+    });
+</script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
 </body>
 </html>

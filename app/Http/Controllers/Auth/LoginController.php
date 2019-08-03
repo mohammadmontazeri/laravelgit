@@ -35,7 +35,7 @@ class LoginController extends Controller
            policy
            */
            if (Gate::allows('loginPanel')){
-               return '/index';
+               return '/admin/home';
            }
            else{
                Auth::logout();

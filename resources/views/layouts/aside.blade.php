@@ -51,8 +51,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>اضافه کردن محصول جدید</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> لیست کلیه محصولات</a></li>
+                    <li><a href="{{url(route('products.create'))}}"><i class="fa fa-circle-o"></i>اضافه کردن محصول جدید</a></li>
+                    <li><a href="{{url(route('products.index'))}}"><i class="fa fa-circle-o"></i> لیست کلیه محصولات</a></li>
                 </ul>
             </li>
             <li class="treeview">
