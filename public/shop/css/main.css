@@ -12,7 +12,7 @@
 }
 body{
     direction: rtl;
-    font-family: iransans;
+    font-family: "main", sans-serif;
     background-color: #f5f4f4;
 }
 a{

@@ -68,13 +68,18 @@ class RegisterController extends Controller
 
     public function create(array $data)
     {
-        $file = $data['img'];
-        $pic = $this->imageuploader($file);
+        if (isset($data['img'])){
+            $file = $data['img'];
+            $pic = $this->imageuploader($file);
+        }else{
+            $pic = "در حال حاضر عکس ندارد";
+        }
+
         $user = new User([
         'name' => $data['name'],
         'email' => $data['email'],
         'img' => $pic,
-        'password' => Hash::make($data['password']),
+        'password' => sha1($data['password']),
     ]);
         $user->save();
         return $user;

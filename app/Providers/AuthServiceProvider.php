@@ -29,5 +29,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('loginPanel',function (){
             return (Auth::user()->status == "1")&&(Auth::user()->role !="user");
         });
+        Gate::define('loginPanelShop',function (){
+            return (Auth::user()->status == "1");
+        });
     }
 }

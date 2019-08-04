@@ -1,6 +1,5 @@
 @extends('layouts.web')
 
-
 @section('content')
     <!--===============start slider===================-->
     <section class="slider">
@@ -30,26 +29,36 @@
             </a>
         </div>
         <div class="item">
-
+            <?php
+            $course = \App\Product::latest()->where('type','=','course')->get();
+            $i = 0;
+            ?>
+            @foreach($course as $c)
+                @if($i=="4")
+                    @break
+                @endif
             <div class="subitem">
-                <a href="#">            <img src="{{asset('public/shop/images/18.jpg')}}">
+                <a href="#">            <img src="{{asset("public/".$c->image)}}">
                 </a>
                 <!--
                                     <i class="fa fa-check" aria-hidden="true"></i>
                 -->
-                <span class="price"></span>
+                <span class="price">{{$c->price}}</span>
                 <div class="content">
-                    <p class="title"><a href="#">sdfasdfdas</a></p>
-                    <p class="demo">acasdcacac</p>
+                    <p class="title"><a href="#">{{$c->title}}</a></p>
+                    <p class="demo">{{$c->summery}}</p>
                 </div>
                 <div class="video_time">
                     <div class="sub_video_item">
-                        <p>مدت زمان دوره</p>
-                        <span>ascacacac <i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                        <p>تعداد قسمت ها</p>
+                        <span>{{$c->episode}} <i class="fa fa-clock-o" aria-hidden="true"></i></span>
                     </div>
                 </div>
             </div>
-
+                <?php
+                    $i++;
+                    ?>
+        @endforeach
         </div>
     </section>
     <!--==================start article==================-->
@@ -63,75 +72,34 @@
             </a>
         </div>
         <div class="item">
+            <?php
+            $article = \App\Product::latest()->where('type','=','article')->get();
+            $i = 0;
+            ?>
+            @foreach($article as $c)
+                @if($i=="4")
+                    @break
+                @endif
             <div class="subitem">
-                <img src="ghaleb/shop/images/new/2.jpg">
-                <!--
+                <img src="{{asset("public/".$c->image)}}">                <!--
                                     <i class="fa fa-check" aria-hidden="true"></i>
                 -->
                 <!-- <span class="price">رایگان</span>-->
                 <div class="content">
-                    <p class="title"><a href="#">مقاله شماره 1</a></p>
-                    <p class="demo">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
+                    <p class="title"><a href="#">{{$c->title}}</a></p>
+                    <p class="demo">{{$c->summery}}</p>
                 </div>
                 <div class="writer">
                     <div class="sub_writer_item">
                         <p>نویسنده</p>
-                        <span>محمد منتظری</span>
+                        <span>{{$c->writer}}</span>
                     </div>
                 </div>
             </div>
-            <div class="subitem">
-                <img src="ghaleb/shop/images/new/3.jpg">
-                <!--
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                -->
-                <!-- <span class="price">رایگان</span>-->
-                <div class="content">
-                    <p class="title"><a href="#">مقاله شماره 1</a></p>
-                    <p class="demo">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-                </div>
-                <div class="writer">
-                    <div class="sub_writer_item">
-                        <p>نویسنده</p>
-                        <span>محمد منتظری</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="subitem">
-                <img src="ghaleb/shop/images/new/4.jpg">
-                <!--
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                -->
-                <!-- <span class="price">25000 تومان</span>-->
-                <div class="content">
-                    <p class="title"><a href="#">مقاله شماره 1</a></p>
-                    <p class="demo">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-                </div>
-                <div class="writer">
-                    <div class="sub_writer_item">
-                        <p>نویسنده</p>
-                        <span>محمد منتظری</span>
-                    </div>
-                </div>
-            </div>
-            <div class="subitem">
-                <img src="ghaleb/shop/images/new/1.jpg">
-                <!--
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                -->
-                <!-- <span class="price">رایگان</span>-->
-                <div class="content">
-                    <p class="title"><a href="#">مقاله شماره 1</a></p>
-                    <p class="demo">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-                </div>
-                <div class="writer">
-                    <div class="sub_writer_item">
-                        <p>نویسنده</p>
-                        <span>محمد منتظری</span>
-                    </div>
-                </div>
-            </div>
+                    <?php
+                    $i++;
+                    ?>
+                @endforeach
         </div>
     </section>
     <!--======================Start sitegardi=============-->

@@ -1,15 +1,18 @@
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('public/shop/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/shop/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/media.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset("public/admin/bootstrap/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("public/admin/dist/css/bootstrap-rtl.min.css")}}">
+    <link rel="stylesheet" href="{{asset('public/css/login.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="{{asset('public/shop/js/jquery-3.2.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('public/shop/js/script2.js')}}"></script>
@@ -22,7 +25,7 @@
 <div class="viewports">
 
 </div>-->
-<section class="signinholder">
+{{--<section class="signinholder">
     <div class="signin">
         <div class="top">
                <span class="exit_signin">
@@ -32,12 +35,14 @@
                 ثبت نام کاربر جدید
             </h4>
         </div>
-        <form action="index.php?c=user&a=register" method="post">
+        <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            {{method_field('POST')}}
             <div class="email">
                        <span>
                            نام کاربری:
                        </span>
-                <input type="text" id="email" name="name">
+                <input type="text" id="name" name="name">
             </div>
             <div class="email">
                        <span>
@@ -70,7 +75,9 @@
                 ورود کاربر به سایت
             </h4>
         </div>
-        <form action="index.php?c=user&a=login" method="post">
+        <form action="" method="post">
+            @csrf
+            {{method_field('POST')}}
             <div class="email">
                        <span>
                            آدرس ایمیل:
@@ -102,7 +109,7 @@
             </div>
         </form>
     </div>
-</section>
+</section>--}}
 <!--=========================send_comment======================-->
 <section class="send_comment_holder">
     <div class="send_comment">
@@ -172,7 +179,8 @@
                 <div class="left">
                     <img src="{{asset('public/shop/images/user.png')}}">
                     <div>
-                        <a class="vorod" href="#"> ورود </a>|<a class="sabt" href="#"> ثبت نام  </a>
+                        <a class="" href="#"> ورود </a>
+                        |<a class="" href="{{route('user_register')}}"> ثبت نام  </a>
                     </div>
                 </div>
             </div>
@@ -222,7 +230,6 @@
 
             </div>
         </div>
-
         <div class="left">
 
 
