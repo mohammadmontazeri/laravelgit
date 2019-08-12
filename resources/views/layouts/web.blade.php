@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="{{asset("public/admin/bootstrap/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("public/admin/dist/css/bootstrap-rtl.min.css")}}"> -->
     <link rel="stylesheet" href="{{asset('public/shop/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/media.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/shop/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset("public/admin/bootstrap/css/bootstrap.min.css")}}">
-    <link rel="stylesheet" href="{{asset("public/admin/dist/css/bootstrap-rtl.min.css")}}">
-    <link rel="stylesheet" href="{{asset('public/css/login.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('public/css/login.css')}}"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="{{asset('public/shop/js/jquery-3.2.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('public/shop/js/script2.js')}}"></script>

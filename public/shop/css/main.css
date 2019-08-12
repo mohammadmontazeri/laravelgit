@@ -9,7 +9,7 @@
     src:url('../fonts/iranyekanwebregular.eot'),/*IE9*/
     url('../fonts/iranyekanwebregular.woff') format('woff'),
     url('../fonts/iranyekanwebregular.ttf') format('truetype');
-}
+  }
 body{
     direction: rtl;
     font-family: "main", sans-serif;
@@ -491,6 +491,7 @@ header .top .menu .top .left div a{
     color: #000;
     opacity: 0.8;
     transition: 0.2s;
+    font-size: .8em;
 }
 header .top .menu .top .left div a:hover{
     color: #22aabb;
