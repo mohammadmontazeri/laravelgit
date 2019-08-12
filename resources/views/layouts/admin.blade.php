@@ -343,7 +343,7 @@ desired effect
 <script src="{{asset("public/admin/bootstrap/js/bootstrap.min.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset("public/admin/dist/js/app.min.js")}}"></script>
-<script src="{{ asset("vendor/unisharp/laravel-ckeditor/ckeditor.js") }}"></script>
+<script src="{{ asset("public/ckeditor/ckeditor.js") }}"></script>
 <script>
     CKEDITOR.replace( 'summary-ckeditor', {
         filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
