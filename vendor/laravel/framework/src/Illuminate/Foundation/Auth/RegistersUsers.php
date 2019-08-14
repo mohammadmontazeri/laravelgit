@@ -28,15 +28,18 @@ trait RegistersUsers
      */
     public function register(Request $request)
     {
+
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-
         $this->guard()->login($user);
-
-        return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
-    }
+        if (isset($request['status'])){
+            Auth::logout();
+            return $this->registered($request, $user) ?: redirect('/')->with('msg','ثبت نام شما با موفقیت انجام شد');
+        }else {
+            return $this->registered($request, $user) ?: redirect($this->redirectPath());
+        }
+        }
 
     /**
      * Get the guard to be used during registration.

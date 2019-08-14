@@ -17,6 +17,9 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
+        if (!empty($_GET)){
+        return view('login');
+    }
         return view('auth.login');
     }
 

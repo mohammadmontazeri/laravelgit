@@ -5,14 +5,14 @@
     margin: 0;
 }
 @font-face{
-    font-family:"main";
+    font-family:"yekan";
     src:url('../fonts/iranyekanwebregular.eot'),/*IE9*/
     url('../fonts/iranyekanwebregular.woff') format('woff'),
     url('../fonts/iranyekanwebregular.ttf') format('truetype');
   }
 body{
     direction: rtl;
-    font-family: "main", sans-serif;
+    font-family: "yekan", sans-serif;
     background-color: #f5f4f4;
 }
 a{
@@ -506,11 +506,12 @@ header .top .menu .bottom .site{
 header .top .menu .bottom .site span{
     width: 12%;
     height: auto;
-    background-color: #ee004c;
+    background-color: #8d2a49;
     line-height: 50px;
     text-align: center;
     color: #fff;
     opacity: 0.8;
+    font-size: .85em;
 }
 header .top .menu .bottom .site .menu_bar{
     width: 9%;
@@ -603,7 +604,7 @@ header .bottom .right div ul{
 header .bottom .right div ul li a{
     color: #000;
     opacity: 0.8;
-    font-size: 0.9em;
+    font-size: 0.8em;
     transition: 0.2s;
 }
 header .bottom .right div ul li a:hover{
@@ -637,25 +638,29 @@ header .bottom .center form .search input{
     height: 36px;
     margin-top: 7px;
     border: none;
-    font-family: iransans;
+    font-family: yekan;
     font-size: 1em;
     padding-right: 1.5%;
     opacity: 0.8;
     outline: none;
     border: solid 1px #aaa;
     box-sizing: border-box;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 header .bottom .center form .search button{
     width: 20%;
     height: 36px;
     margin-top: 7px;
     border: none;
-    font-family: iransans;
+    font-family: yekan;
     background-color: #aaa;
     opacity: 0.8;    
     color: #fff;
     font-size: 1em;
     cursor: pointer;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 header .bottom .left{
     width: 25%;
@@ -729,7 +734,7 @@ header .bottom .left p{
     background-position: center;
     background-size: cover;*/
     position: relative;
-    background: linear-gradient(90deg,#09AD8F,#269abc);
+    background: linear-gradient(90deg,rgb(115, 137, 151),#6092a1);
 }
 /*.slider .cover{
     width: 100%;
@@ -1416,6 +1421,8 @@ header .bottom .left p{
     border: solid 0.5px #999;
     box-sizing: border-box;
     border-left: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 .footeritem .center form .search button{
     width: 15%;
@@ -2233,21 +2240,21 @@ header .bottom .left p{
 .user_panel_basket .panel_content .left .title{
     height: 40px;
 }
-.user_panel_basket .panel_content .left .main_content{
+.user_panel_basket .panel_content .left .yekan_content{
     width: 100%;
     height: auto;
     margin-top: 25px;
     border: solid 0.25px #ccc;
     box-shadow: 1px 1px 10px #ddd;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list{
+.user_panel_basket .panel_content .left .yekan_content .pro_list{
     width: 98%;
     height: auto;
     padding: 1% 0.5%;
     box-sizing: border-box;
     border-bottom: solid 1px #ddd;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li{
     width: 75%;
     height: 60px;
     margin-top: 10px;
@@ -2260,18 +2267,18 @@ header .bottom .left p{
     box-sizing: border-box;
     background-color: #ddd;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li .title_pro{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li .title_pro{
     width: 75%;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li .title_pro span{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li .title_pro span{
     margin-right: 5%;
     color: #ee004c;
     font-weight: 600;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li .delete_pro{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li .delete_pro{
     width: 20%;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li .delete_pro .del_basket{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li .delete_pro .del_basket{
     background-color: #ee004c;
     padding: 2% 4.5%;
     box-sizing: border-box;
@@ -2282,16 +2289,16 @@ header .bottom .left p{
     font-size: 0.9em;
     font-weight: bold;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy{
     width: 100%;
     height: auto;
     padding: 0.5% 0.5%;
     box-sizing: border-box;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy  .off_code{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy  .off_code{
     margin-bottom: 1%;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy  .off_code input{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy  .off_code input{
     border: none;
     outline: none;
     padding:0.5% 1%;
@@ -2299,13 +2306,13 @@ header .bottom .left p{
     font-size: 1.2em;
     background-color: #ccc;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy  .all_price span b{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy  .all_price span b{
     color: #22bbcc;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy  .btn_complete{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy  .btn_complete{
     margin-top: 2%;
 }
-.user_panel_basket .panel_content .left .main_content .complete_buy  .btn_complete a{
+.user_panel_basket .panel_content .left .yekan_content .complete_buy  .btn_complete a{
     display: block;
     width: 100%;
     border: none;
@@ -2318,7 +2325,7 @@ header .bottom .left p{
     color: #000;
     text-align: center;
 }
-.user_panel_basket .panel_content .left .main_content .pro_list ul li .delete_pro .del_basket_resp{
+.user_panel_basket .panel_content .left .yekan_content .pro_list ul li .delete_pro .del_basket_resp{
     display: none;
     padding: 2% 4.5%;
     margin: auto;
@@ -2390,23 +2397,23 @@ header .bottom .left p{
 .user_panel_change .panel_content .left .title{
     height: 40px;
 }
-.user_panel_change .panel_content .left .main_content{
+.user_panel_change .panel_content .left .yekan_content{
     width: 100%;
     height: auto;
     margin-top: 25px;
 }
-.user_panel_change .panel_content .left .main_content .email{
+.user_panel_change .panel_content .left .yekan_content .email{
     width: 50%;
     margin-bottom: 15px;
 }
-.user_panel_change .panel_content .left .main_content .password{
+.user_panel_change .panel_content .left .yekan_content .password{
     width: 50%;
 }
-.user_panel_change .panel_content .left .main_content .btn_div{
+.user_panel_change .panel_content .left .yekan_content .btn_div{
     width: 100%;
     margin: auto;
 }
-.user_panel_change .panel_content .left .main_content .btn_div button{
+.user_panel_change .panel_content .left .yekan_content .btn_div button{
     width: 95%;
     display: block;
     margin: auto;
@@ -2421,7 +2428,7 @@ header .bottom .left p{
     font-size: 1em;
     box-sizing: border-box;
 }
-.user_panel_change .panel_content .left .main_content form input{
+.user_panel_change .panel_content .left .yekan_content form input{
     outline: none;
     float: left;
     padding: 1% 1%;
@@ -2491,15 +2498,205 @@ header .bottom .left p{
 .user_panel_default .panel_content .left .title{
     height: 40px;
 }
-.user_panel_default .panel_content .left .main_content{
+.user_panel_default .panel_content .left .yekan_content{
     width: 100%;
     height: auto;
     margin-top: 25px;
 }
-.user_panel_default .panel_content .left .main_content ul li {
+.user_panel_default .panel_content .left .yekan_content ul li {
     margin-top: 15px;
 }
-.user_panel_default .panel_content .left .main_content ul li span{
+.user_panel_default .panel_content .left .yekan_content ul li span{
     color: #ee004c;
 }
+/*====================register=============*/
+.reg_part{
+    width: 600px;
+    height: 650px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 5px;
+    border: solid 2px #aaa;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.reg_part .top{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+.reg_part .top span{
+    color: #666;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+.reg_part .middle{
+    text-align: center;
+}
+.reg_part .middle span{
+    color: #999;
+    font-size: .95em;
+}
+.reg_part .middle span .logo{
+    color: #cf234f;
+}
+.reg_part .bottom{
+    width: 98%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.reg_part .bottom  .top_title{
+    color: #ddd;
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: .9em;
+}
+.reg_part .bottom  .member_char_box{
+    width: 100%;
+    height: auto;
+}
+.reg_part .bottom  .member_char_box .user_char{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-bottom: 4%;
+}
+.reg_part .bottom  .member_char_box .user_char span{
+    color: #444;
+    font-size: .8em;
+}
+.reg_part .bottom  .member_char_box .user_char input{
+    height: 37px;
+    border-radius: 3px;
+    padding: 2px 15px;
+    box-sizing: border-box;
+    border: none;
+    color: #999;
+    font-size: 1em;
+    font-weight: 200;
+    margin-top: 5px;
+    border: solid 1px #aaa;
+    outline: none;
+}
+.reg_part .bottom  .member_char_box .btn_register{
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background-color: #cf234f;
+    outline: none;
+    border-radius: 5px;
+    color: #f6f4f5;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-family: yekan;
+}
+.reg_part .bottom  .member_char_box .login_link{
+    display: block;
+    margin: auto;
+    font-size: .85em;
+}
+.reg_part .bottom  .member_char_box .login_link a{
+    color: #cf234f;
+}
+/*====================login=============*/
+.login_part{
+    width: 600px;
+    height: auto;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 5px;
+    border: solid 2px #aaa;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login_part .top{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 7.5%;
+    text-align: center;
+}
+.login_part .top span{
+    color: #666;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+.login_part .middle{
+    text-align: center;
+}
+.login_part .middle span{
+    color: #999;
+    font-size: .95em;
+}
+.login_part .middle span .logo{
+    color: #cf234f;
+}
+.login_part .bottom{
+    width: 98%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login_part .bottom  .top_title{
+    color: #ddd;
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: .9em;
+}
+.login_part .bottom  .member_char_box{
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+    box-sizing: border-box;
+}
+.login_part .bottom  .member_char_box .user_char{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-bottom: 4%;
+}
+.login_part .bottom  .member_char_box .user_char span{
+    color: #444;
+    font-size: .8em;
+}
+.login_part .bottom  .member_char_box .user_char input{
+    height: 37px;
+    border-radius: 3px;
+    padding: 2px 15px;
+    box-sizing: border-box;
+    border: none;
+    color: #999;
+    font-size: 1em;
+    font-weight: 200;
+    margin-top: 5px;
+    border: solid 1px #aaa;
+    outline: none;
+}
+.login_part .bottom  .member_char_box .btn_login{
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background-color: #cf234f;
+    outline: none;
+    border-radius: 5px;
+    color: #f6f4f5;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-family: yekan;
+}

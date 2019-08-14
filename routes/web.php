@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/panel_logout',function (){
     \Illuminate\Support\Facades\Auth::logout();
-    return redirect('/admin/home');
+    return redirect('/admin/');
 });
 Route::group(['prefix'=>'admin'],function (){
     Auth::routes();
 });
 
 Route::middleware(['auth:web'])->group(function (){
-    Route::get('/admin/home', function () {
+    Route::get('/admin/', function () {
         return view('admin.index');
     });
     // User Module
@@ -39,13 +39,17 @@ Route::post('ckeditor/image_upload', 'Admin\ProductController@upload')->name('up
 
 //////////////                            User Panel Routes
 
-Route::get('/home',function (){
+Route::get('/',function (){
    return view('index');
 })->name('home');
 //
-Route::post('/user/register','UserController@register')->name('user.store');
-Route::post('/user/login','UserController@login')->name('user.login');
+//Route::post('/user/register','UserController@register')->name('user.store');
+Route::post('/user/login','Auth\LoginController@authenticate')->name('user.login');
 //
-Route::get('register',function(){
+Route::get('/register',function(){
     return view('register');
 })->name('user_register');
+
+Route::get('/login',function(){
+    return view('login');
+})->name('user_login');

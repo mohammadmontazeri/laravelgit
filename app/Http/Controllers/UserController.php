@@ -33,15 +33,15 @@ class UserController extends AdminController
 
     public function login(Request $request){
         $user = User::where('email','=',$request['email'])->get();
-        $pass = $user[0]['password'];
-        if (isset($user)){
-            if ($pass == sha1($request['password'])){
-                return "OK";
+        if (!empty($user)){
+            $pass = $user[0]['password'];
+            if (Hash::check($request['password'],$pass)){
+                return redirect()->back()->with('msg','ورود شما با موفقیت انجام شد');
             }else{
-                return "NOT OK";
+                return redirect()->back()->with('msg','رمز عبور شما صحیح نمی باشد');
             }
         }else{
-            return "NOT FOUND";
+            return redirect()->back()->with('msg','کاربری با این مشخصات وجود ندارد');
         }
     }
 

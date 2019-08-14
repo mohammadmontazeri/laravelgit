@@ -4,6 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-right image">
+
                 <img src="{{asset("public".\Illuminate\Support\Facades\Auth::user()->img)}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
