@@ -35,7 +35,7 @@
                         <input type="email" name="email">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: red">{{ $message }}</strong>
                                     </span>
                         @enderror
                     </div>
@@ -45,9 +45,9 @@
                       </span>
                         <input type="text" name="name">
                         @error('name')
-                        <span class="invalid-feedback" role="alert" >
-                        <strong>{{ $message }}</strong>
-                    </span>
+                        <span class="invalid-feedback" role="alert">
+                                        <strong style="color: red">{{ $message }}</strong>
+                                    </span>
                         @enderror
                     </div>
                     <div class="user_char">
@@ -57,7 +57,7 @@
                         <input type="password" name="password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: red">{{ $message }}</strong>
                                     </span>
                         @enderror
                     </div>
@@ -67,17 +67,17 @@
                       </span>
                         <input type="password" name="password_confirmation">
                     </div>
-                    <div class="user_char">
+                    {{--<div class="user_char">
                       <span>
                           بارگزاری تصویر
                       </span>
                         <input type="file" name="img">
-                    </div>
+                    </div>--}}
                     <button class="btn_register" name="btn">
                         ثبت نام
                     </button>
                     <span class="login_link">
-                      قبلا عضو شده اید؟ <a href="#">ورود</a>
+                      قبلا عضو شده اید؟ <a href="{{route('user_login')}}">ورود</a>
                   </span>
                 </form>
             </div>

@@ -77,6 +77,9 @@
             }
             echo "</ul>";
         }
+        ?>
+        <a href="{{url(route('addMainCat'))}}" class="label label-warning" style="float: left;padding: 7px;">افزودن دسته جدید</a>
+        <?
         ch($categories);
 
         ?>

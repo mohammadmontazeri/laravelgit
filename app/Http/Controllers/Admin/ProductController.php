@@ -28,7 +28,7 @@ class ProductController extends AdminController
      */
     public function create()
     {
-        $category = Category::get();
+        $category = Category::where('is_parent','=','0')->get();
         return view('admin.product.add',compact('category'));
     }
 

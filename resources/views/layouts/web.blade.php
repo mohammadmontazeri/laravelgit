@@ -17,6 +17,12 @@
     <script src="{{asset('public/shop/js/jquery2.js')}}"></script>
     <script src="{{asset('public/shop/js/sweetalert.js')}}"></script>
     <title>آکادمی وب اینجا</title>
+    <style>
+        body{
+           width: 1300px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body><!--
 <div class="viewports">
@@ -60,11 +66,11 @@
             </div>
         </form>
     </div>
-</section>
+</section>--}}
 <!--=========================login======================-->
-<section class="loginholder" id="loginholder">
+ <section class="loginholder" id="loginholder">
     <div class="login">
-        <div class="top">
+       <div class="top">
                <span class="exit_login">
                    خروج
                </span>
@@ -106,9 +112,9 @@
             </div>
         </form>
     </div>
-</section>--}}
+</section>
 <!--=========================send_comment======================-->
-<section class="send_comment_holder">
+{{--<section class="send_comment_holder">
     <div class="send_comment">
         <div class="top_comment">
             <h5>ارسال دیدگاه</h5>
@@ -121,7 +127,7 @@
             </form>
         </div>
     </div>
-</section>
+</section>--}}
 <!--=====================header==========================-->
 <header>
     <div class="top">
@@ -176,9 +182,33 @@
                 <div class="left">
                     <img src="{{asset('public/shop/images/user.png')}}">
                     <div>
+
+                        <?php
+                        if (\Illuminate\Support\Facades\Auth::check()){
+                            ?>
+                            <a class="" href="" style="color: #3c763d"> پنل کاربر </a>
+                            |
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="display: inline;">
+                                <a class="dropdown-item" href="{{ route('logout') }}" style="color: #f0004c"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    خروج
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        <?
+                        }else{
+                            ?>
+
                             <a class="" href="{{route('user_login')}}"> ورود </a>
                             |
                             <a class="" href="{{route('user_register')}}"> ثبت نام  </a>
+                        <?
+                        }
+
+                        ?>
                     </div>
                 </div>
             </div>
@@ -191,9 +221,7 @@
                         <li><a href="">آموزش کد نویسی مدرن</a></li>
                         <li><a href="">کدنویسی حرفه ای </a></li>
                         <li><a href="">دوره اصلی آموزش php</a></li>
-
                     </ul>
-
                 </div>
             </div>
         </div>
@@ -229,9 +257,9 @@
             </div>
         </div>
         <div class="left">
-        @if(session('msg'))
+       @if(session('msg'))
             <label class="label label-success" style="color: #f0004c;">{{session('msg')}}</label>
-        @endif    
+        @endif
 
           {{--  <span class="panel"><a href="index.php?c=userpanel&a=default">پنل کاربری شما</a></span>
             <div>

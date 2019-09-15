@@ -17,9 +17,6 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        if (!empty($_GET)){
-        return view('login');
-    }
         return view('auth.login');
     }
 
@@ -167,7 +164,7 @@ trait AuthenticatesUsers
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/');
+        return $this->loggedOut($request) ?: redirect()->route('home');
     }
 
     /**

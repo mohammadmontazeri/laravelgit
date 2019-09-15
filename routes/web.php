@@ -30,6 +30,9 @@ Route::middleware(['auth:web'])->group(function (){
     })->name('all_admin');
     // Category Module
     Route::resource('/admin/categories','Admin\CategoryController');
+    Route::get('/admin/category/add',function(){
+       return view('admin.category.addMain');
+    })->name('addMainCat');
     // Product Module
     Route::resource('admin/products','Admin\ProductController');
     Route::get('admin/product/moreInfo/{id}','Admin\ProductController@moreInfo');
@@ -53,3 +56,5 @@ Route::get('/register',function(){
 Route::get('/login',function(){
     return view('login');
 })->name('user_login');
+
+echo "sfhsadfjg,hsgf";

@@ -112,6 +112,12 @@ class CategoryController extends AdminController
             }
         }
         $category->delete();
+        $parent = Category::where('id','=',$category['parent'])->get();
+        $childs = Category::where('parent','=',$parent[0]['id'])->get();
+        //return $childs;die;
+        if (empty($childs[0])){
+            Category::where('id','=',$category['parent'])->update(['is_parent'=>'0 ']);
+        }
         return redirect()->back();
     }
 }

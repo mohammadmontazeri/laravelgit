@@ -20,7 +20,6 @@
                   مشخصات کاربر
               </span>
             @if(session('msg'))
-
                 <span style="color: #f0004c">{{session('msg')}}</span>
             @endif
             <div class="member_char_box">
@@ -39,7 +38,7 @@
                       <span>
                           رمز عبور
                       </span>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
