@@ -57,4 +57,5 @@ Route::get('/login',function(){
     return view('login');
 })->name('user_login');
 
-echo "test for new branch";
+
+echo "v2";
